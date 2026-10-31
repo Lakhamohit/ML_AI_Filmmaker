@@ -551,9 +551,9 @@
                 <div>
                     <h4 class="text-xs font-mono text-brand-accent mb-2">BEFORE/AFTER: RAW PLATE VS FINAL COLOR GRADE & CLEANUP</h4>
                     <div class="comparison-slider h-64 sm:h-80 rounded-xl border border-brand-border" id="sliderBox">
-                        <img id="afterImage" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover">
+                        <img id="afterImage" src="" class="w-full h-full object-cover">
                         <div class="comparison-before" id="beforeBox">
-                            <img id="beforeImage" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover grayscale opacity-70">
+                            <img id="beforeImage" src="" class="w-full h-full object-cover grayscale opacity-70">
                         </div>
                         <div class="comparison-handle" id="sliderHandle">
                             <i class="fa-solid fa-arrows-left-right text-xs"></i>
@@ -561,16 +561,11 @@
                     </div>
                 </div>
 
-                <!-- Prompt & Parameter Breakdown -->
-                <div class="bg-brand-dark p-4 rounded-xl border border-brand-border space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-mono text-brand-gold">EXACT PROMPT SYNTAX & TOOLCHAIN</span>
-                        <button onclick="copyPromptText()" class="text-[11px] text-brand-accent hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-copy"></i> Copy Prompt
-                        </button>
-                    </div>
-                    <p id="modalPrompt" class="text-xs font-mono text-gray-300 leading-relaxed bg-black/50 p-3 rounded border border-white/5">
-                        /imagine prompt: Cinematic 35mm wide pan, futuristic operative in dark coat, neon rim light, volumetric fog, Kodak Vision3 500T aesthetic --ar 16:9 --motion 5
+                <!-- Toolchain & Specs (Safe Metadata instead of Prompt) -->
+                <div class="bg-brand-dark p-4 rounded-xl border border-brand-border space-y-2">
+                    <span class="text-xs font-mono text-brand-gold">PRODUCTION TOOLCHAIN & SPECIFICATIONS</span>
+                    <p id="modalTechStack" class="text-xs font-mono text-gray-300">
+                        Kling 3.0 Omni • Kodak Vision3 500T • Multi-Angle Character Lock
                     </p>
                 </div>
             </div>
