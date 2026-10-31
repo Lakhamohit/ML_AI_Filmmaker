@@ -751,16 +751,20 @@
         }
 
         // --- 4. PROJECT FILTERS & MODAL ---
+// Fixed Filter Projects Function (Supports Multi-Category Tags)
         function filterProjects(cat) {
+            // Update active button styling
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active', 'bg-brand-accent', 'text-black', 'border-brand-accent');
                 btn.classList.add('bg-brand-card', 'text-gray-300', 'border-brand-border');
             });
-            event.target.classList.add('active', 'bg-brand-accent', 'text-black', 'border-brand-accent');
+            event.currentTarget.classList.add('active', 'bg-brand-accent', 'text-black', 'border-brand-accent');
 
+            // Filter cards based on inclusion
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
-                if (cat === 'all' || card.dataset.category === cat) {
+                const cardCategories = card.getAttribute('data-category') || '';
+                if (cat === 'all' || cardCategories.includes(cat)) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
