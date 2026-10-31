@@ -224,7 +224,7 @@
                     <div class="lg:col-span-5">
                         <div class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-card group shadow-2xl">
                             <div class="aspect-video relative bg-slate-900 flex items-center justify-center">
-                                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1000&q=80" alt="Cinematic Preview" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                                <img src="https://youtu.be/fDfbV-Y2AP8" alt="Cinematic Preview" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
                                 <button onclick="openModal('showreelModal')" class="absolute w-16 h-16 rounded-full bg-brand-accent/90 text-black flex items-center justify-center text-xl shadow-lg shadow-cyan-500/40 hover:scale-110 transition-transform">
                                     <i class="fa-solid fa-play ml-1"></i>
                                 </button>
@@ -603,17 +603,15 @@
     </footer>
 
 
-    <!-- MODAL 1: SHOWREEL POPUP -->
+<!-- MODAL 1: SHOWREEL POPUP -->
     <div id="showreelModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="bg-brand-card border border-brand-border rounded-2xl w-full max-w-4xl overflow-hidden relative">
             <button onclick="closeModal('showreelModal')" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/70 text-gray-300 hover:text-white flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
+            <!-- Yahan YouTube iframe embed laga dein -->
             <div class="aspect-video bg-black flex items-center justify-center relative">
-                <div class="text-center space-y-3">
-                    <i class="fa-solid fa-circle-play text-5xl text-brand-accent animate-pulse"></i>
-                    <p class="text-sm font-mono text-gray-300">[ 60s High-Bitrate AI Director Showreel Playing ]</p>
-                </div>
+                <iframe src="https://www.youtube.com/embed/fDfbV-Y2AP8" class="w-full h-full" allowfullscreen></iframe>
             </div>
         </div>
     </div>
