@@ -223,21 +223,29 @@
         </section>
 
         <!-- 3. FEATURED PROJECTS SHOWCASE -->
-        <section id="showcase" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<!-- Section Header + Dedicated Showcase Search -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-4">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Production Showcase</h2>
                     <p class="text-xs sm:text-sm text-gray-400 mt-1">Categorized generative productions with character lock & prompt breakdowns.</p>
                 </div>
 
-                <!-- Category Filters -->
-                <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar" id="categoryFilters">
-                    <button onclick="filterProjects('all')" class="filter-btn active text-xs font-medium px-4 py-2 rounded-full border border-brand-accent bg-brand-accent text-black transition-all">All Projects</button>
-                    <button onclick="filterProjects('episodic')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Episodic Series</button>
-                    <button onclick="filterProjects('shorts')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Short Films</button>
-                    <button onclick="filterProjects('vertical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">9:16 Vertical</button>
-                    <button onclick="filterProjects('spec')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Spec Ads</button>
-                    <button onclick="filterProjects('character')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Character Grids</button>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <!-- Showcase Dedicated Search Bar -->
+                    <div class="relative min-w-[240px]">
+                        <input type="text" id="showcaseSearchInput" onkeyup="handleShowcaseSearch()" placeholder="Search projects..." class="w-full bg-brand-card text-xs text-gray-200 pl-9 pr-4 py-2 rounded-full border border-brand-border focus:border-brand-accent focus:outline-none transition-all placeholder-gray-500">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-500 text-xs"></i>
+                    </div>
+
+                    <!-- Category Filters -->
+                    <div class="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 no-scrollbar" id="categoryFilters">
+                        <button onclick="filterProjects('all')" class="filter-btn active text-xs font-medium px-4 py-2 rounded-full border border-brand-accent bg-brand-accent text-black transition-all">All Projects</button>
+                        <button onclick="filterProjects('episodic')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Episodic Series</button>
+                        <button onclick="filterProjects('shorts')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Short Films</button>
+                        <button onclick="filterProjects('vertical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">9:16 Vertical</button>
+                        <button onclick="filterProjects('spec')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Spec Ads</button>
+                        <button onclick="filterProjects('character')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Character Grids</button>
+                    </div>
                 </div>
             </div>
 
@@ -563,7 +571,22 @@
     <!-- JAVASCRIPT DATA & LOGIC -->
     <script>
         // --- 1. DATA VAULT ENTRIES ---
-
+        
+// Dedicated Showcase Search Function
+        function handleShowcaseSearch() {
+            const query = document.getElementById('showcaseSearchInput').value.toLowerCase().trim();
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (query === '' || text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
         // 12 Principles of Animation Data
         const animationPrinciples = [
             { name: "1. Squash and Stretch", desc: "Flexibility & weight recoil in facial muscles or bouncing props.", icon: "fa-compress" },
