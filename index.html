@@ -222,53 +222,51 @@
             </div>
         </section>
 
-        <!-- 3. FEATURED PROJECTS SHOWCASE -->
-<!-- Section Header + Dedicated Showcase Search -->
-            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-4">
+<!-- 3. FEATURED PROJECTS SHOWCASE -->
+        <section id="showcase" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Row: Title & Dedicated Search Bar -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Production Showcase</h2>
                     <p class="text-xs sm:text-sm text-gray-400 mt-1">Categorized generative productions with character lock & prompt breakdowns.</p>
                 </div>
+                <!-- Showcase Dedicated Search Bar -->
+                <div class="relative w-full md:w-80">
+                    <input type="text" id="showcaseSearchInput" onkeyup="handleShowcaseSearch()" placeholder="Search showcase projects..." class="w-full bg-brand-card text-xs text-gray-200 pl-9 pr-4 py-2.5 rounded-full border border-brand-border focus:border-brand-accent focus:outline-none transition-all placeholder-gray-500">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-500 text-xs"></i>
+                </div>
+            </div>
 
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                    <!-- Showcase Dedicated Search Bar -->
-                    <div class="relative min-w-[240px]">
-                        <input type="text" id="showcaseSearchInput" onkeyup="handleShowcaseSearch()" placeholder="Search projects..." class="w-full bg-brand-card text-xs text-gray-200 pl-9 pr-4 py-2 rounded-full border border-brand-border focus:border-brand-accent focus:outline-none transition-all placeholder-gray-500">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-500 text-xs"></i>
-                    </div>
-
-                    <!-- Category Filters -->
-<!-- Category Filters (20 Cinematic & Technical Categories) -->
-<!-- Category Filters (Clean 20+ Scrollable Container) -->
-<div class="w-full overflow-x-auto pb-2 no-scrollbar" id="categoryFilters">
-    <div class="flex items-center gap-2 w-max">
-        <button onclick="filterProjects('all')" class="filter-btn active text-xs font-medium px-4 py-2 rounded-full border border-brand-accent bg-brand-accent text-black transition-all shrink-0">All Projects</button>
-        <button onclick="filterProjects('episodic')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Episodic Series</button>
-        <button onclick="filterProjects('shorts')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Short Films</button>
-        <button onclick="filterProjects('vertical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">9:16 Vertical</button>
-        <button onclick="filterProjects('horizontal')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">16:9 Horizontal</button>
-        <button onclick="filterProjects('spec')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Spec Ads & Trailers</button>
-        <button onclick="filterProjects('character')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Character Turnarounds</button>
-        <button onclick="filterProjects('scifi')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Sci-Fi & Cyberpunk</button>
-        <button onclick="filterProjects('historical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Historical Drama</button>
-        <button onclick="filterProjects('thriller')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Thriller & Micro-Dramas</button>
-        <button onclick="filterProjects('environments')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Environment Plates</button>
-        <button onclick="filterProjects('motion')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Camera Motion Control</button>
-        <button onclick="filterProjects('vfx')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">VFX & Composition</button>
-        <button onclick="filterProjects('colorgrade')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">35mm Kodak Stock Grade</button>
-        <button onclick="filterProjects('voice')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">AI Voice & Dubbing</button>
-        <button onclick="filterProjects('score')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Music & Sound Stems</button>
-        <button onclick="filterProjects('kling')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Kling 3.0 Omni</button>
-        <button onclick="filterProjects('veo')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Google Veo 3.1</button>
-        <button onclick="filterProjects('highsfield')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Highsfield AI</button>
-        <button onclick="filterProjects('automation')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Photoshop ExtendScript (.jsx)</button>
-    </div>
-</div>
+            <!-- Scrollable Category Filters Row (20+ Categories) -->
+            <div class="w-full overflow-x-auto pb-4 mb-8 no-scrollbar" id="categoryFilters">
+                <div class="flex items-center gap-2 w-max">
+                    <button onclick="filterProjects('all')" class="filter-btn active text-xs font-medium px-4 py-2 rounded-full border border-brand-accent bg-brand-accent text-black transition-all shrink-0">All Projects</button>
+                    <button onclick="filterProjects('episodic')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Episodic Series</button>
+                    <button onclick="filterProjects('shorts')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Short Films</button>
+                    <button onclick="filterProjects('vertical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">9:16 Vertical</button>
+                    <button onclick="filterProjects('horizontal')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">16:9 Horizontal</button>
+                    <button onclick="filterProjects('spec')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Spec Ads & Trailers</button>
+                    <button onclick="filterProjects('character')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Character Turnarounds</button>
+                    <button onclick="filterProjects('scifi')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Sci-Fi & Cyberpunk</button>
+                    <button onclick="filterProjects('historical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Historical Drama</button>
+                    <button onclick="filterProjects('thriller')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Thriller & Micro-Dramas</button>
+                    <button onclick="filterProjects('environments')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Environment Plates</button>
+                    <button onclick="filterProjects('motion')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Camera Motion Control</button>
+                    <button onclick="filterProjects('vfx')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">VFX & Composition</button>
+                    <button onclick="filterProjects('colorgrade')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">35mm Kodak Stock Grade</button>
+                    <button onclick="filterProjects('voice')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">AI Voice & Dubbing</button>
+                    <button onclick="filterProjects('score')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Music & Sound Stems</button>
+                    <button onclick="filterProjects('kling')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Kling 3.0 Omni</button>
+                    <button onclick="filterProjects('veo')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Google Veo 3.1</button>
+                    <button onclick="filterProjects('highsfield')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Highsfield AI</button>
+                    <button onclick="filterProjects('automation')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Photoshop ExtendScript (.jsx)</button>
+                </div>
+            </div>
 
             <!-- Projects Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
                 <!-- Project Card 1 -->
-                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="episodic" onclick="openProjectModal(1)">
+                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="episodic horizontal scifi kling" onclick="openProjectModal(1)">
                     <div class="aspect-video relative overflow-hidden bg-gray-900">
                         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                         <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-mono text-cyan-400 border border-cyan-500/30">16:9 • EPISODIC</div>
@@ -286,7 +284,7 @@
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="shorts" onclick="openProjectModal(2)">
+                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="shorts horizontal historical veo" onclick="openProjectModal(2)">
                     <div class="aspect-video relative overflow-hidden bg-gray-900">
                         <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                         <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-mono text-brand-gold border border-amber-500/30">16:9 • SHORT FILM</div>
@@ -302,7 +300,7 @@
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="vertical" onclick="openProjectModal(3)">
+                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="vertical thriller voice" onclick="openProjectModal(3)">
                     <div class="aspect-video relative overflow-hidden bg-gray-900">
                         <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                         <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-mono text-purple-400 border border-purple-500/30">9:16 • VERTICAL REEL</div>
@@ -318,14 +316,14 @@
                 </div>
 
                 <!-- Project Card 4 -->
-                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="spec" onclick="openProjectModal(4)">
+                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="spec horizontal highsfield" onclick="openProjectModal(4)">
                     <div class="aspect-video relative overflow-hidden bg-gray-900">
                         <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                         <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-mono text-green-400 border border-green-500/30">SPEC COMMERCIAL</div>
                     </div>
                     <div class="p-5 space-y-3">
                         <h3 class="text-lg font-bold text-white">AURA HYPERCAR</h3>
-                        <p class="text-xs text-gray-400 line-clamp-2">High-speed automotive spec commercial with reflections, hard surface modeling, and dynamic camera pans.</p>
+                        <p class="text-xs text-gray-400 line-compress-2">High-speed automotive spec commercial with reflections, hard surface modeling, and dynamic camera pans.</p>
                         <div class="flex flex-wrap gap-1.5 pt-2">
                             <span class="text-[10px] bg-brand-dark px-2.5 py-1 rounded-md text-gray-300 border border-brand-border font-mono">Highsfield Soul</span>
                             <span class="text-[10px] bg-brand-dark px-2.5 py-1 rounded-md text-gray-300 border border-brand-border font-mono">AE Post</span>
@@ -334,7 +332,7 @@
                 </div>
 
                 <!-- Project Card 5 -->
-                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="character" onclick="openProjectModal(5)">
+                <div class="project-card card-hover-effect bg-brand-card rounded-2xl border border-brand-border overflow-hidden cursor-pointer" data-category="character automation" onclick="openProjectModal(5)">
                     <div class="aspect-video relative overflow-hidden bg-gray-900">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                         <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-mono text-pink-400 border border-pink-500/30">CHARACTER LOCK</div>
