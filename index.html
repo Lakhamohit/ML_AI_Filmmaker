@@ -663,24 +663,128 @@
         ];
 
 
-        // 30 Camera Shot Types Data
+        // 100 Camera Shot Types Data
+// 100 CINEMATIC SHOT TYPES DATABASE (10 CATEGORIES x 10 SHOTS)
         const shotTypes = [
-            { name: "Extreme Long Shot (ELS)", size: "Extreme Wide", subject: "environment", desc: "Environment dominates completely; subject microscopic." },
-            { name: "Long Shot (LS) / Wide (WS)", size: "Wide", subject: "character", desc: "Full body character framed with surrounding environment context." },
-            { name: "Full Shot (FS)", size: "Full Body", subject: "character", desc: "Character fills the frame from head to toe." },
-            { name: "Medium Long Shot (MLS)", size: "Knees Up", subject: "character", desc: "Framed from knees up; balances character and background." },
-            { name: "Cowboy Shot", size: "Thighs Up", subject: "character", desc: "Classic Western hip/holster level framing." },
-            { name: "Medium Shot (MS)", size: "Waist Up", subject: "character", desc: "Standard dialogue framing from waist up." },
-            { name: "Medium Close-Up (MCU)", size: "Chest Up", subject: "face", desc: "Chest level framing focusing on facial reactions." },
-            { name: "Close-Up (CU)", size: "Shoulders Up", subject: "face", desc: "Fills frame with subject face to capture emotion." },
-            { name: "Extreme Close-Up (ECU)", size: "Detail Focus", subject: "face", desc: "Focuses on specific features like eyes or iris texture." },
-            { name: "Establishing Shot", size: "Wide Scene", subject: "environment", desc: "Sets the location, atmosphere, and time of day." },
-            { name: "Choker Shot", size: "Face Tight", subject: "face", desc: "Tight framing from chin to forehead." },
-            { name: "Macro Detail Shot", size: "Micro Detail", subject: "prop", desc: "Extreme close up on minute textures or prop mechanisms." },
-            { name: "Italian Shot", size: "Eyes Only", subject: "face", desc: "Spaghetti Western style tight crop across eyes." },
-            { name: "Over-The-Shoulder (OTS)", size: "Dialogue", subject: "character", desc: "Framed behind one character looking at another." },
-            { name: "Point of View (POV)", size: "First Person", subject: "environment", desc: "Renders exact line-of-sight visual perspective." },
-            { name: "Insert Shot", size: "Prop Detail", subject: "prop", desc: "Isolated shot highlighting a key document or object." }
+            // 1. Environment Shots
+            { name: "Extreme Wide Shot (EWS)", size: "Extreme Wide", subject: "environment", desc: "Subject appears microscopic within a vast environment." },
+            { name: "Extreme Long Shot (ELS)", size: "Extreme Wide", subject: "environment", desc: "Environment dominates the entire frame completely." },
+            { name: "Wide Shot (WS)", size: "Wide", subject: "environment", desc: "Shows the subject within its full surroundings." },
+            { name: "Very Wide Shot (VWS)", size: "Very Wide", subject: "environment", desc: "Captures a broad landscape with subject visible." },
+            { name: "Establishing Shot", size: "Wide Scene", subject: "environment", desc: "Introduces location, atmosphere, and time of day." },
+            { name: "Master Shot", size: "Full Scene", subject: "environment", desc: "Captures the entire scene and spatial relationships." },
+            { name: "Long Shot (LS)", size: "Wide Context", subject: "environment", desc: "Shows full subject with surrounding environmental context." },
+            { name: "Extreme High-Angle Wide", size: "Overhead Wide", subject: "environment", desc: "Looks down over a large environment from high altitude." },
+            { name: "Bird's-Eye View", size: "Top-Down", subject: "environment", desc: "Direct 90-degree overhead view of a location." },
+            { name: "Aerial Shot", size: "Drone / High", subject: "environment", desc: "Captures broad environment sweeping from above." },
+
+            // 2. Full Character Shots
+            { name: "Full Shot (FS)", size: "Full Body", subject: "character", desc: "Character framed precisely from head to toe." },
+            { name: "Full Body Shot", size: "Full Body", subject: "character", desc: "Entire character body clearly visible in frame." },
+            { name: "Long Shot Character", size: "Full Body", subject: "character", desc: "Full character framed with environmental context." },
+            { name: "Medium Long Shot (MLS)", size: "Knees Up", subject: "character", desc: "Character framed from knees upward." },
+            { name: "Three-Quarter Shot", size: "Mid-Thigh Up", subject: "character", desc: "Framed from approximately mid-thigh upward." },
+            { name: "Cowboy Shot", size: "Thighs Up", subject: "character", desc: "Framed from mid-thigh or holster level upward." },
+            { name: "American Shot", size: "Western Thigh", subject: "character", desc: "Classic Western-style framing around the thighs." },
+            { name: "Knee Shot", size: "Knees Up", subject: "character", desc: "Character framed distinctly from knees upward." },
+            { name: "Wide Character Shot", size: "Full Body", subject: "character", desc: "Full character with additional surrounding negative space." },
+            { name: "Silhouette Shot", size: "Dark Outline", subject: "character", desc: "Character appears as a dark outline against backlight." },
+
+            // 3. Medium Character Shots
+            { name: "Medium Shot (MS)", size: "Waist Up", subject: "character", desc: "Standard dialogue framing from waist upward." },
+            { name: "Medium Full Shot", size: "Thighs Up", subject: "character", desc: "Shows most of the character's body." },
+            { name: "Medium Wide Shot", size: "Knees Up", subject: "character", desc: "Character occupies moderate spatial frame space." },
+            { name: "Medium Two-Shot", size: "Dialogue Pair", subject: "character", desc: "Two characters framed together waist up." },
+            { name: "Three-Person Shot", size: "Group Trio", subject: "character", desc: "Three characters in a single balanced frame." },
+            { name: "Group Shot", size: "Multi-Character", subject: "character", desc: "Multiple characters shown together in scene." },
+            { name: "Profile Medium Shot", size: "Side Profile", subject: "character", desc: "Character viewed waist up from the side." },
+            { name: "Back Medium Shot", size: "Rear Angle", subject: "character", desc: "Character viewed waist up from behind." },
+            { name: "Over-The-Shoulder (OTS)", size: "Dialogue", subject: "character", desc: "Looks past one character's shoulder toward another." },
+            { name: "Reverse OTS Shot", size: "Dialogue Flip", subject: "character", desc: "Opposite perspective of an over-the-shoulder shot." },
+
+            // 4. Face and Close-Up Shots
+            { name: "Medium Close-Up (MCU)", size: "Chest Up", subject: "face", desc: "Framed from chest upward focusing on reactions." },
+            { name: "Close-Up (CU)", size: "Shoulders Up", subject: "face", desc: "Face fills most of the frame to capture emotion." },
+            { name: "Tight Close-Up", size: "Face Tight", subject: "face", desc: "Extremely tight facial framing from chin to forehead." },
+            { name: "Extreme Close-Up (ECU)", size: "Feature Focus", subject: "face", desc: "Focuses tightly on a specific facial feature." },
+            { name: "Choker Shot", size: "Tight Face", subject: "face", desc: "Tight crop strictly from chin to forehead." },
+            { name: "Head-and-Shoulders Shot", size: "Standard Portrait", subject: "face", desc: "Head and shoulders clearly visible in frame." },
+            { name: "Headshot", size: "Facial Focus", subject: "face", desc: "Focuses primarily on the face and facial structure." },
+            { name: "Face Profile Shot", size: "Side View", subject: "face", desc: "Exact side view of the subject's face." },
+            { name: "Three-Quarter Face Shot", size: "45 Degree Face", subject: "face", desc: "Face turned approximately 45 degrees to camera." },
+            { name: "Front-Facing Portrait", size: "Direct Eye-Contact", subject: "face", desc: "Character looks directly forward toward camera." },
+
+            // 5. Eye and Micro Facial Shots
+            { name: "Italian Shot", size: "Eyes Crop", subject: "face", desc: "Tight Spaghetti Western crop emphasizing the eyes." },
+            { name: "Eyes-Only Shot", size: "Eyes Focus", subject: "face", desc: "Only the eyes and immediate surrounding area visible." },
+            { name: "Single-Eye ECU", size: "Micro Eye", subject: "face", desc: "Extreme close-up focusing on a single eye." },
+            { name: "Iris Detail Shot", size: "Micro Iris", subject: "face", desc: "Highlights detailed iris patterns and color texture." },
+            { name: "Pupil Detail Shot", size: "Micro Pupil", subject: "face", desc: "Focuses on pupil dilation and micro reflections." },
+            { name: "Eyebrow Detail Shot", size: "Micro Brow", subject: "face", desc: "Captures eyebrow movement and subtle expression." },
+            { name: "Lips Close-Up", size: "Mouth Focus", subject: "face", desc: "Focuses closely on the mouth and lips motion." },
+            { name: "Teeth Detail Shot", size: "Micro Expression", subject: "face", desc: "Highlights teeth or detailed facial expression." },
+            { name: "Nose Detail Shot", size: "Micro Texture", subject: "face", desc: "Focuses on nose shape, skin texture, and lighting." },
+            { name: "Facial Expression Shot", size: "Micro Muscle", subject: "face", desc: "Captures subtle emotional micro-expressions." },
+
+            // 6. Prop and Detail Shots
+            { name: "Insert Shot", size: "Prop Focus", subject: "prop", desc: "Highlights an important narrative object." },
+            { name: "Extreme Macro Shot", size: "Microscope", subject: "prop", desc: "Captures microscopic surface textures and details." },
+            { name: "Macro Detail Shot", size: "Texture Close-Up", subject: "prop", desc: "Shows small textures and intricate mechanical features." },
+            { name: "Prop Close-Up", size: "Object Focus", subject: "prop", desc: "Focuses closely on a specific prop element." },
+            { name: "Object Isolated Shot", size: "Isolated Item", subject: "prop", desc: "Object presented independently with key lighting." },
+            { name: "Hand Detail Shot", size: "Hand Action", subject: "prop", desc: "Focuses on hands performing a specific action." },
+            { name: "Finger Detail Shot", size: "Micro Fingers", subject: "prop", desc: "Highlights precise finger movements or triggers." },
+            { name: "Texture Shot", size: "Material Focus", subject: "prop", desc: "Emphasizes material surface quality (leather, metal)." },
+            { name: "Mechanism Detail Shot", size: "Gear / Tech", subject: "prop", desc: "Shows how an internal object or mechanism works." },
+            { name: "Document Insert Shot", size: "Paper / Screen", subject: "prop", desc: "Highlights a letter, paper document, or UI screen." },
+
+            // 7. Perspective and Point-of-View Shots
+            { name: "Point-of-View (POV)", size: "First Person", subject: "environment", desc: "Shows exactly what a character sees through their eyes." },
+            { name: "First-Person Shot", size: "FPS Angle", subject: "environment", desc: "Presents the scene from direct character perspective." },
+            { name: "Second-Person Perspective", size: "Addressed Subject", subject: "character", desc: "Frames the viewer as the addressed subject." },
+            { name: "Third-Person Shot", size: "External View", subject: "character", desc: "Shows the character from an external camera viewpoint." },
+            { name: "Overhead Shot", size: "Top-Down", subject: "environment", desc: "Camera positioned directly above the subject." },
+            { name: "High-Angle Shot", size: "Looking Down", subject: "character", desc: "Camera pitches downward making subject appear small." },
+            { name: "Low-Angle Shot", size: "Looking Up", subject: "character", desc: "Camera pitches upward making subject look imposing." },
+            { name: "Eye-Level Shot", size: "Neutral Height", subject: "character", desc: "Camera positioned at subject's exact eye level." },
+            { name: "Ground-Level Shot", size: "Floor Level", subject: "environment", desc: "Camera positioned close to floor or ground surface." },
+            { name: "Worm's-Eye View", size: "Extreme Upward", subject: "environment", desc: "Dramatic upward perspective from extreme ground level." },
+
+            // 8. Dynamic and Cinematic Shots
+            { name: "Dutch Angle Shot", size: "Tilted Frame", subject: "character", desc: "Camera tilted diagonally to create psychological tension." },
+            { name: "Tracking Shot", size: "Lateral Movement", subject: "character", desc: "Camera moves side-by-side alongside the subject." },
+            { name: "Dolly-In Shot", size: "Forward Track", subject: "character", desc: "Camera physically moves forward toward the subject." },
+            { name: "Dolly-Out Shot", size: "Backward Track", subject: "character", desc: "Camera physically moves backward away from subject." },
+            { name: "Crane Shot", size: "Vertical Elevation", subject: "environment", desc: "Camera moves vertically using a jib or crane arm." },
+            { name: "Arc Shot", size: "360 Orbit", subject: "character", desc: "Camera orbits in a smooth circular arc around subject." },
+            { name: "Push-In Shot", size: "Subtle Focus Push", subject: "face", desc: "Gradual movement toward the subject's face." },
+            { name: "Pull-Back Shot", size: "Reveal Pull", subject: "environment", desc: "Gradual movement backward revealing surrounding scene." },
+            { name: "Whip Pan Shot", size: "Fast Rotation", subject: "environment", desc: "Rapid horizontal camera pan creating motion blur." },
+            { name: "Follow Shot", size: "Chasing Motion", subject: "character", desc: "Camera tracks closely behind a moving character." },
+
+            // 9. Composition and Special Framing
+            { name: "Frame Within a Frame", size: "Architectural Framing", subject: "character", desc: "Subject framed through a window, door, or structure." },
+            { name: "Leading Lines Shot", size: "Visual Depth", subject: "environment", desc: "Uses environmental lines to guide eyes to subject." },
+            { name: "Negative Space Shot", size: "Minimalist", subject: "environment", desc: "Subject surrounded by vast empty visual space." },
+            { name: "Centered Composition", size: "Symmetrical Core", subject: "character", desc: "Subject placed squarely in the horizontal center." },
+            { name: "Symmetrical Shot", size: "Balanced Geometry", subject: "environment", desc: "Perfectly balanced visual composition on both sides." },
+            { name: "Asymmetrical Shot", size: "Off-Center Balance", subject: "character", desc: "Deliberately uneven visual framing for dynamic tension." },
+            { name: "Foreground Framing", size: "Layered Depth", subject: "character", desc: "Uses blurred foreground elements to frame subject." },
+            { name: "Deep Focus Shot", size: "Infinite Focus", subject: "environment", desc: "Foreground, midground, and background all in sharp focus." },
+            { name: "Shallow Focus Shot", size: "Bokeh Blur", subject: "face", desc: "Background is softly blurred while subject is razor-sharp." },
+            { name: "Split Diopter Shot", size: "Dual Focus Planes", subject: "character", desc: "Keeps two distinct background/foreground depth planes sharp." },
+
+            // 10. Special Cinematic Shots
+            { name: "Rack Focus Shot", size: "Focus Pull", subject: "prop", desc: "Focus shifts dynamically between two depth targets." },
+            { name: "Zoom-In Shot", size: "Focal Magnify", subject: "face", desc: "Lens focal length magnifies subject without camera move." },
+            { name: "Zoom-Out Shot", size: "Focal Widen", subject: "environment", desc: "Lens focal length widens field of view instantly." },
+            { name: "Crash Zoom Shot", size: "Rapid Snap Zoom", subject: "face", desc: "Sudden dramatic optical snap zoom toward subject." },
+            { name: "Vertigo (Dolly Zoom)", size: "Spatial Distortion", subject: "character", desc: "Dolly back while zooming in; background warps depth." },
+            { name: "Reflection Shot", size: "Mirrored Surface", subject: "character", desc: "Subject captured through water, glass, or glossy surface." },
+            { name: "Mirror Shot", size: "Glass Reflection", subject: "face", desc: "Subject framed indirectly through a mirror reflection." },
+            { name: "Shadow Shot", size: "Silhouette Shadow", subject: "prop", desc: "Uses cast shadows as the primary visual element." },
+            { name: "Silhouette Backlight", size: "Rim Glow", subject: "character", desc: "Subject outlined by strong rim backlighting." },
+            { name: "Freeze-Frame Shot", size: "Frozen Motion", subject: "character", desc: "Captures a high-speed action moment frozen in time." }
         ];
 
 
