@@ -746,13 +746,28 @@
             document.getElementById('modalCategoryBadge').innerText = id === 1 ? 'EPISODIC SERIES' : 'GENERATIVE SHOWCASE';
         }
 
-        // --- 5. SEARCH LOGIC ---
+       // --- 5. SEARCH LOGIC (FIXED REAL-TIME SEARCH) ---
         function handleGlobalSearch() {
-            const query = (document.getElementById('globalSearchInput').value || document.getElementById('mobileSearchInput').value).toLowerCase();
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
+            const query = (document.getElementById('globalSearchInput').value || document.getElementById('mobileSearchInput').value).toLowerCase().trim();
+            
+            // Filter Project Cards
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
                 const text = card.innerText.toLowerCase();
-                card.style.display = text.includes(query) ? 'block' : 'none';
+                card.style.display = (query === '' || text.includes(query)) ? 'block' : 'none';
+            });
+
+            // Filter Vault Cards
+            const vaultCards = document.querySelectorAll('.vault-card');
+            vaultCards.forEach(card => {
+                const title = card.getAttribute('data-title') || '';
+                const desc = card.getAttribute('data-desc') || '';
+                const text = card.innerText.toLowerCase();
+                if (query === '' || title.includes(query) || desc.includes(query) || text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         }
 
