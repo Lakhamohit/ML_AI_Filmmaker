@@ -239,27 +239,30 @@
 
                     <!-- Category Filters -->
 <!-- Category Filters (20 Cinematic & Technical Categories) -->
-<div class="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 no-scrollbar whitespace-nowrap" id="categoryFilters">
-    <button onclick="filterProjects('all')" class="filter-btn active text-xs font-medium px-4 py-2 rounded-full border border-brand-accent bg-brand-accent text-black transition-all">All Projects</button>
-    <button onclick="filterProjects('episodic')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Episodic Series</button>
-    <button onclick="filterProjects('shorts')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Short Films</button>
-    <button onclick="filterProjects('vertical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">9:16 Vertical</button>
-    <button onclick="filterProjects('horizontal')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">16:9 Horizontal</button>
-    <button onclick="filterProjects('spec')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Spec Ads & Trailers</button>
-    <button onclick="filterProjects('character')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Character Turnarounds</button>
-    <button onclick="filterProjects('scifi')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Sci-Fi & Cyberpunk</button>
-    <button onclick="filterProjects('historical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Historical Drama</button>
-    <button onclick="filterProjects('thriller')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Thriller & Micro-Dramas</button>
-    <button onclick="filterProjects('environments')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Environment Plates</button>
-    <button onclick="filterProjects('motion')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Camera Motion Control</button>
-    <button onclick="filterProjects('vfx')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">VFX & Composition</button>
-    <button onclick="filterProjects('colorgrade')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">35mm Kodak Stock Grade</button>
-    <button onclick="filterProjects('voice')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">AI Voice & Dubbing</button>
-    <button onclick="filterProjects('score')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Music & Sound Stems</button>
-    <button onclick="filterProjects('kling')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Kling 3.0 Omni</button>
-    <button onclick="filterProjects('veo')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Google Veo 3.1</button>
-    <button onclick="filterProjects('highsfield')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Highsfield AI</button>
-    <button onclick="filterProjects('automation')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all">Photoshop ExtendScript (.jsx)</button>
+<!-- Category Filters (Clean 20+ Scrollable Container) -->
+<div class="w-full overflow-x-auto pb-2 no-scrollbar" id="categoryFilters">
+    <div class="flex items-center gap-2 w-max">
+        <button onclick="filterProjects('all')" class="filter-btn active text-xs font-medium px-4 py-2 rounded-full border border-brand-accent bg-brand-accent text-black transition-all shrink-0">All Projects</button>
+        <button onclick="filterProjects('episodic')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Episodic Series</button>
+        <button onclick="filterProjects('shorts')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Short Films</button>
+        <button onclick="filterProjects('vertical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">9:16 Vertical</button>
+        <button onclick="filterProjects('horizontal')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">16:9 Horizontal</button>
+        <button onclick="filterProjects('spec')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Spec Ads & Trailers</button>
+        <button onclick="filterProjects('character')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Character Turnarounds</button>
+        <button onclick="filterProjects('scifi')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Sci-Fi & Cyberpunk</button>
+        <button onclick="filterProjects('historical')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Historical Drama</button>
+        <button onclick="filterProjects('thriller')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Thriller & Micro-Dramas</button>
+        <button onclick="filterProjects('environments')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Environment Plates</button>
+        <button onclick="filterProjects('motion')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Camera Motion Control</button>
+        <button onclick="filterProjects('vfx')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">VFX & Composition</button>
+        <button onclick="filterProjects('colorgrade')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">35mm Kodak Stock Grade</button>
+        <button onclick="filterProjects('voice')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">AI Voice & Dubbing</button>
+        <button onclick="filterProjects('score')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Music & Sound Stems</button>
+        <button onclick="filterProjects('kling')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Kling 3.0 Omni</button>
+        <button onclick="filterProjects('veo')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Google Veo 3.1</button>
+        <button onclick="filterProjects('highsfield')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Highsfield AI</button>
+        <button onclick="filterProjects('automation')" class="filter-btn text-xs font-medium px-4 py-2 rounded-full border border-brand-border bg-brand-card text-gray-300 hover:border-brand-accent transition-all shrink-0">Photoshop ExtendScript (.jsx)</button>
+    </div>
 </div>
 
             <!-- Projects Grid -->
